@@ -4,3 +4,8 @@
 
 # calcie
 Calcie is a simple and cute console-based calculator application, perfect for small devices and low-age-friendly use.
+
+## Download
+- [try on webmsx](https://webmsx.org/?MACHINE=MSXTRJ&DISKA_URL=https://raw.githubusercontent.com/renatus-xxxx/calcie/main/bin/CALCIE.DSK&FAST_BOOT)
+- [.DSK image(DOS for MSX v0.16 Gaku)](https://raw.githubusercontent.com/renatus-xxxx/calcie/main/bin/CALCIE.DSK)
+- [CALCIE.COM](https://raw.githubusercontent.com/renatus-xxxx/calcie/main/bin/CALCIE.COM)
