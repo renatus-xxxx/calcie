@@ -45,9 +45,17 @@ int main() {
   while (1) {
     printf("Enter calculation: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
-      // Remove newline character
-      input[strcspn(input, "\n")] = 0;
 
+      // Remove newline character
+      size_t len = strlen(input);
+      if (len > 0 && (input[len - 1] == '\n' || input[len - 1] == '\r')) {
+        input[len - 1] = '\0';
+      }
+      if (len > 1 && (input[len - 2] == '\r' || input[len - 2] == '\n')) {
+        input[len - 2] = '\0';
+      }
+
+      printf("[%s]\n", input);
       // Exit condition
       if (strcmp(input, "exit") == 0) {
         printf("Goodbye!\n");
@@ -55,10 +63,12 @@ int main() {
       }
 
       // Parse input
-      if (sscanf(input, "%f %c %f", &Num1, &Operator, &Num2) == 3) {
+      int ret = sscanf(input, "%f %c %f", &Num1, &Operator, &Num2);
+      if (ret == 3) {
         Result = calculate(Num1, Num2, Operator);
         printf("Result: %.2f\n\n", Result);
       } else {
+        printf("ret=%d, Num1=%f, Operator=%c, Num2=%f\n", ret, Num1, Operator, Num2);
         printf("Error: Invalid input format. Please try again.\n\n");
       }
     }
