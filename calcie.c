@@ -55,7 +55,6 @@ int main() {
         input[len - 2] = '\0';
       }
 
-      printf("[%s]\n", input);
       // Exit condition
       if (strcmp(input, "exit") == 0) {
         printf("Goodbye!\n");
@@ -68,7 +67,6 @@ int main() {
         Result = calculate(Num1, Num2, Operator);
         printf("Result: %.2f\n\n", Result);
       } else {
-        printf("ret=%d, Num1=%f, Operator=%c, Num2=%f\n", ret, Num1, Operator, Num2);
         printf("Error: Invalid input format. Please try again.\n\n");
       }
     }
